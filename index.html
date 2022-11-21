@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boostrap</title>
+
+    <!-- récupération du css (version minifiée, performante pour chager les pages du site) téléchargé pour un projet en bootstrap -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+
+    <!-- CDN CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- obligatoirement, mon css doit etre declaré après celui de BS, pour etre prioritaire sur lui -->
+    <link rel="stylesheet" href="css/mon_style.css">
+
+</head>
+<body>
+
+    <!-- la classe contzainer fluid permet d'occuper sur toute la largeur -->
+    <header class="container-fluid mb-5">
+        <!-- la classe row de BS permet d'afficher plusieurs éléments sur une même ligne, à l'horizontale (équivalent à display:flex;) -->
+        <div class="row">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quod iste quaerat vitae dignissimos, fugiat quidem reprehenderit hic, ad repellat nobis impedit magni minima consectetur dicta? Necessitatibus praesentium numquam incidunt animi facere non porro expedita facilis quod, et voluptate, ea minima, provident at deserunt ipsum voluptas nam blanditiis mollitia harum. Sequi quisquam voluptate, nostrum, repellat iure dolor accusamus, architecto possimus esse excepturi libero! Voluptas minima odit debitis officiis voluptates laborum, maiores sed repellendus, ratione dolore labore, sit dicta totam cumque quis et accusantium! Harum pariatur quidem ducimus aperiam itaque, quia blanditiis aspernatur tenetur temporibus! Repellat recusandae facilis possimus expedita laudantium.</p>
+        </div>
+    </header>
+
+    <!-- Container va afficher sur une largeur plus réduite, centrée -->
+    <!-- border donne une bordure et primary une couleur bleue a cette bordure -->
+    <main class="container zone1 py-5 border border-primary shadow ">
+        <!-- ms pour margin start donne une marge à gauche -->
+        <!-- text-danger une couleur rouge au texte -->
+        <!-- text-center de contrer le texte -->
+        <h1 class="ms-5 text-danger text-center">Bootstrap tests</h1>
+        
+        <h2>Installer Bootstrap</h2>
+
+        <h3>En téléchargement</h3>
+        <div class="row">
+            <!-- besoin d'un contenant, équivalent en largeur à 8 colonnes pour afficher les 2 paragraphes -->
+            <!-- mx-auto permet de centrer cette colonne dans son contenant parent <main>. Equivalent à magin: auto -->
+            <div class="col-8 mx-auto">
+                <p>On peut récupérer le framework BS sur <a href="https://getbootstrap.com/docs/5.1/getting-started/download/" target="_blank"> ce lien</a></p>
+                <p>On installe les deux dossiers récupérés css et je dans notre projet, puis on relie le css dans le &lt;head> et le js avant &lt;/body> fermant</p>
+            </div>
+        </div>
+
+        <h3>Avec un CDN (Content Delivery Network)</h3>
+        <!-- une row qui va afficher cote a cote les deux paragraphes. Le premier dans un bloc équivalent à 7 colonnes et le second équivalent à 5 colonnes -->
+        <div class="row">
+            <!-- une bordure de couleur verte avec un padding global de 4 -->
+            <div class="col-7 border border-success p-4">
+                <p>On peut aussi utiliser un CDN pour relier notre projet à la bibliothèque Bootstrap, sans télécharger les dossiers/fichiers. Les CDN sont récupérables sur <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/"> cette page</a> (copier le lien CSS (et le coller dans &lt;head>) et Bundle en bas de page, avant &lt;/body> fermant</p>
+            </div>
+            <!-- une bordure de couleur grise avec un padding de valeur 4 -->
+            <div class="col-5 border border-secondary p-4">
+                <p>Si on travaille sans connexion, on utilise le BS téléchargé. Inversement, si on bénéficie d'une connexion, alors on utilise le CDN, plus performant. Attention, les deux manières ne doivent pas etre utilisées en simultanées. Il faut que l'un des deux liens soit mis en commentaire selon le contexte, sinon, conflit de code.</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- différence avec la row précédente: ici les deux colonnes auront une largeur de 7 et 5 sur ecrans de taille médiums (portables et +), grace à md-7 et md-5 -->
+            <!-- par contre, sur tablettes et smartphones, elles seront libérées de cette contrainte de 7 et 5. Elles occuperont par défaut une largeur de 100% de la row. Elles s'afficheront désormais l'une au dessus de l'autre et non plus cote a cote sur tablettes et smartphones -->
+            <div class="col-md-7 border border-success p-4">
+                <p>On peut aussi utiliser un CDN pour relier notre projet à la bibliothèque Bootstrap, sans télécharger les dossiers/fichiers. Les CDN sont récupérables sur <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/"> cette page</a> (copier le lien CSS (et le coller dans &lt;head>) et Bundle en bas de page, avant &lt;/body> fermant</p>
+            </div>
+            <!-- une bordure de couleur grise avec un padding de valeur 4 -->
+            <div class="col-md-5 border border-secondary p-4">
+                <p>Si on travaille sans connexion, on utilise le BS téléchargé. Inversement, si on bénéficie d'une connexion, alors on utilise le CDN, plus performant. Attention, les deux manières ne doivent pas etre utilisées en simultanées. Il faut que l'un des deux liens soit mis en commentaire selon le contexte, sinon, conlit de code.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- si je ne donne pas de valeur pour la colonne, col sans - + valeur, alors BS va donner une même largeur à toutes les colonnes de cette row -->
+            <!-- je peux même en déclarer plus de 12, même si BS est sensé fonctionner par colonnes de 12. Il va quand même continuer à me les afficher de même largeur -->
+            <div class="col border border-danger">Zone 1</div>
+            <div class="col border border-danger">Zone 2</div>
+            <div class="col border border-danger">Zone 3</div>
+            <div class="col border border-danger">Zone 4</div>
+            <div class="col border border-danger">Zone 5</div>
+            <div class="col border border-danger">Zone 6</div>
+            <div class="col border border-danger">Zone 7</div>
+            <div class="col border border-danger">Zone 8</div>
+            <div class="col border border-danger">Zone 9</div>
+            <div class="col border border-danger">Zone 10</div>
+            <div class="col border border-danger">Zone 11</div>
+            <div class="col border border-danger">Zone 12</div>
+            <div class="col border border-danger">Zone 13</div>
+            <div class="col border border-danger">Zone 14</div>
+            <div class="col border border-danger">Zone 15</div>
+            <div class="col border border-danger">Zone 16</div>
+            <div class="col border border-danger">Zone 17</div>
+            <div class="col border border-danger">Zone 18</div>
+            <div class="col border border-danger">Zone 19</div>
+            <div class="col border border-danger">Zone 20</div>
+        </div>
+
+        <h2>La grille de Bootstrap</h2>
+
+        <p>Qlq soit la taille de l'écran, BS va diviser la largeur de ce dernier en 12 colonnes de tailles égales. 12 colonnes que l'on pourra ensuite répartir pour nos différentes zones apparentes à l'écran (voir début pdf chapitre système de grille) </p>
+
+        <h3>Les marges</h3>
+        <p>BS met a notre disposition une classe m qui permet de donner une marge globale, ou ciblée, telle que ci dessous, une marge a gauche, progressive en valeur. ms-1, ms-2, ms-3, ms-4 et ms-5 (valeur maximum). ms-veut dire margin-start ... à gauche</p>
+        <p class="ms-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro nemo error quo placeat distinctio doloribus voluptate sint minima dignissimos quibusdam?</p>
+        <p class="ms-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro nemo error quo placeat distinctio doloribus voluptate sint minima dignissimos quibusdam?</p>
+        <p class="ms-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro nemo error quo placeat distinctio doloribus voluptate sint minima dignissimos quibusdam?</p>
+        <p class="ms-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro nemo error quo placeat distinctio doloribus voluptate sint minima dignissimos quibusdam?</p>
+        <p class="ms-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro nemo error quo placeat distinctio doloribus voluptate sint minima dignissimos quibusdam?</p>
+
+        <h2>Alignement, positionnement horizontal (justify-content)</h2>
+
+        <h3 class="mt-5">Alignement à gauche</h3>
+        <p>Par défaut, de manière naturelle, nos blocs vont s'aligner à gauche</p>
+        <div class="row">
+            <div class="col-3 bg-success text-light">Zone 1</div>
+            <div class="col-3 bg-danger text-light">Zone 2</div>
+        </div>
+
+        <h3 class="mt-5">Alignement à droite</h3>
+
+        <p>Pour aligner des blocs sur la droite de leur contenant (&lt;div class='row'), on utilise <span class="text-primary">justify-content-end</span></p>
+        <div class="row justify-content-end">
+            <div class="col-3 bg-success text-light">Zone 1</div>
+            <div class="col-3 bg-danger text-light">Zone 2</div>
+        </div>
+
+        <h3 class="mt-5">Alignement au centre</h3>
+
+        <p>Pour aligner des blocs au centre de leur contenant (&lt;div class='row'), on utilise <span class="text-primary">justify-content-center</span></p>
+        <div class="row justify-content-center">
+            <div class="col-3 bg-success text-light">Zone 1</div>
+            <div class="col-3 bg-danger text-light">Zone 2</div>
+        </div>
+
+        <p>S' il y a besoin d'aligner a gauche car ce n'est pas le comportement naturel, on utilise <span class="text-primary">justify-content-start</span></p>
+
+        <h3 class="mt-5">Alignement automatisé</h3>
+
+        <p>Affichage avec <span class="text-primary">justify-content-around</span>. Les espaces générés sont plutot égaux entre les cotés et entre les blocs</p>
+        <div class="row justify-content-around bg-info">
+            <div class="col-3 bg-success text-light">Zone 1</div>
+            <div class="col-3 bg-danger text-light">Zone 2</div>
+        </div>
+
+        <p>Affichage avec <span class="text-primary">justify-content-evenly</span>. Un autre espacement plutot harmonieux par rapport aux bordures externes et entre les blocs</p>
+        <div class="row justify-content-evenly bg-info">
+            <div class="col-3 bg-success text-light">Zone 1</div>
+            <div class="col-3 bg-danger text-light">Zone 2</div>
+        </div>
+
+        <p>Affichage avec <span class="text-primary">justify-content-between</span>. Ce dernier colle les deux blocs aux extremes aux bordures a gauche et a droite, laissant de l'espace au milieu</p>
+        <div class="row justify-content-between bg-info">
+            <div class="col-3 bg-success text-light">Zone 1</div>
+            <div class="col-3 bg-danger text-light">Zone 2</div>
+        </div>
+
+        <h3 class="mt-5">Alignement personnalisé</h3>
+
+        <p>Pour personnaliser l'affichage (largeur de colonnes ainsi que l'espacement entre chacune) je vais utiliser le offset. offset-1 va générer un espace équivalent à une colonne entre deux blocs (offset-2 sera équivalent à deux colonnes etc...)</p>
+        <div class="row bg-info">
+            <!-- un bloc équivalent à 7 colonnes, précédé d'un espace équivalent à une colonne, suivi d'un nouvel espace pour le séparer du bloc suivant, équivalent à deux colonnes -->
+            <div class="col-7 offset-1 bg-success text-light">Zone 1</div>
+            <div class="col-2 offset-1 bg-danger text-light">Zone 2</div>
+        </div>
+        
+        <p>La contrainte md (ou lg, sm, xs) est aussi prise en compte dans le cas d'un offset. Ainsi, ce dernier n'existera que pour l'écran précisé</p>
+
+        <div class="row bg-info">
+            <div class="col-7 offset-md-1 bg-success text-light">Zone 1</div>
+            <div class="col-2 offset-md-1 bg-danger text-light">Zone 2</div>
+        </div>
+
+        <h3 class="mt-5">Inversion de colonnes</h3>
+
+        <p>Bootstrap donne la possibilité d'inverser l'ordre des colonnes, selon la taille de l'écran (affichage différent de la maquette selon desktop, tablettes ou smartphone)</p>
+        <p>On utilise pour cela la classe order, puis l'ordre d'apparition</p>
+        <p>Dans l'exemple ci-dessous, sur écrans médiums et +, la sidebar s'affichera en second, mais sur smartphones, en premier</p>
+        <p>Attention, il faut d'abord coder le col de 3 pour la side-bar (<span class="text-primary">col-md-3 order-md-2</span>), suivi du col-9 pour le main (<span class="text-primary">col-md-9 order-md-1</span>), puis inverser l'ordre d'apparition</p>
+        <div class="row">
+            <div class="col-md-3 order-md-2 bg-warning">Sidebar</div>
+            <div class="col-md-9 order-md-1 bg-danger">Contenu main</div>
+        </div>
+
+        <h2>Positionnement, alignement vertical</h2>
+
+        <h3>Align-items-start</h3>
+
+        <p>Si je donne une hauteur a mon contenant global (la row) sans rien préciser de plus, les colonnes s'affichant dans cette row occuperont a leur tour la hauteur totale</p>
+        <p>Avec <span class="text-primary">align-items-start</span>, elles s'afficheront en haut de cette row, avec une hauteur décidée par leur contenu</p>
+        <div class="row hauteur align-items-start">
+            <div class="col bg-success">Zone 1</div>
+            <div class="col bg-secondary">Zone 2</div>
+            <div class="col bg-primary">Zone 3</div>
+        </div>
+
+        <h3>Align-items-center</h3>
+
+        <p>De la même manière, avec <span class="text-primary">align-items-center</span> les blocs contenus se centreront dans le sens de la verticale</p>
+        <div class="row hauteur align-items-center">
+            <div class="col bg-success">Zone 1</div>
+            <div class="col bg-secondary">Zone 2</div>
+            <div class="col bg-primary">Zone 3</div>
+        </div>
+
+        <h3>Align-items-end</h3>
+
+        <p>De la même manière, avec <span class="text-primary">align-items-end</span> les blocs contenus se positionneront en bas de leur contenant</p>
+        <div class="row hauteur align-items-end">
+            <div class="col bg-success">Zone 1</div>
+            <div class="col bg-secondary">Zone 2</div>
+            <div class="col bg-primary">Zone 3</div>
+        </div>
+
+        <h3>Alignement vertical personnalisé</h3>
+
+        <p>Bootstrap permet de personnaliser l'alignement vertical des éléments d'un contenant. Tous ne seront pas en même temps alignés en haut, au centre ou en bas. Je peux décider de manière individuelle de leur positionnement</p>
+
+        <p>Avec <span class="text-primary">align-items-start</span>, <span class="text-primary">align-items-center</span> et <span class="text-primary">align-items-end</span>, je peux décider individuellement que tel bloc s'affichera en haut, au milieu ou en bas, sans impacter les autres blocs du contenant</p>
+
+        <div class="row hauteur">
+            <div class="col align-self-end bg-success">Zone 1</div>
+            <div class="col align-self-start bg-secondary">Zone 2</div>
+            <div class="col align-self-center bg-primary">Zone 3</div>
+        </div>
+
+        <h2>Margin et padding</h2>
+
+        <p>Bootstrap utilise une syntaxe simple dans la classe pour donner de la marge (marge externe) et du padding (marge interne) aux éléments</p>
+
+        <h3>Marges</h3>
+        <p>Si je veux donner un margin-left au bloc jaune ci-dessous, je devrais ecrire dans sa classe ms-5 (5 étant la valeur de cette marge). C'est équivalent en css à margin-left: 3rem;.</p>
+        <p><span class="text-danger">Info:</span> jusqu'à la version 4.6 de Bootstrap, l'équivalent de margin-left était ml (et margin-right, mr). Depuis la version 5.1, il faut désormais ecrire <span class="text-danger">ms</span> (pour margin-start) et <span class="text-danger">me</span> (pour margin-edanger
+        <div class="row hauteur">
+            <div class="col align-self-start ms-5 bg-warning">Zone 1</div>
+            <div class="col align-self-end me-5 bg-danger">Zone 2</div>
+        </div>
+
+        <h3>Padding</h3>
+        <p>Pour le padding, on remplace la lettre m par la lettre p</p>
+        <p>Ci-dessous, j'ai donné un padding-top (pt) de valeur 5 au bloc jaune et un padding-bottom (pb) au bloc rouge</p>
+        <div class="row hauteur">
+            <div class="col align-self-start pt-5 bg-warning">Zone 1</div>
+            <div class="col align-self-end pb-5 bg-danger">Zone 2</div>
+        </div>
+
+        <h3>Margin ou padding sur l'axe des Y</h3>
+        <p>Boostrap permet une syntaxe rapide si le margin-top et le margin-bottom ont la même valeur affectée.</p>
+        <p class="my-3">Je travaillerais sur l'axe des ordonnées, la verticale en donnant a ce paragraphe la classe <span class="text-danger">my-3</span></p>
+        <p>Le paragraphe au dessus aura été séparé par un margin-top de valeur 3 et ce paragraphe un margin-bottom aussi de valeur 3</p>
+
+        <h3>Margin ou padding global</h3>
+
+        <p>Avec un m-auto, la marge va etre automatique sur l'axe des x et des y. Mon bloc va se centrer parfaitement à la verticale comme à l'horizontale</p>
+        <p>Par contre, avec simplement un mx-auto, il ne se serait centré qu'à horizontale. Attention, il faut noter avant align-self-start, sinon, le bloc se centre à l'horizontale, mais en occupant la hauteur totale (pas besoin avec m-auto)</p>
+        <div class="row hauteur">
+            <div class="col-6 bg-dark text-light text-center m-auto">Zone</div>
+        </div>
+
+        <p>Dernier cas de figure, avec un bloc affiché complètement à droite, par rapport aux autres blocs</p>
+        <p><span class="text-danger">ms-auto</span> (pour margin-start) est l'équivalent en css de <span class="text-danger">margin-left: auto</span></p>
+        <div class="row hauteur">
+            <div class="col-3 align-self-start bg-warning">Zone 1</div>
+            <div class="col-3 align-self-start bg-primary">Zone 2</div>
+            <div class="col-3 align-self-start ms-auto bg-danger">Zone 3</div>
+        </div>
+
+        </main>
+
+        <footer class="container-fluid mt-5">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quod iste quaerat vitae dignissimos, fugiat quidem reprehenderit hic, ad repellat nobis impedit magni minima consectetur dicta? Necessitatibus praesentium numquam incidunt animi facere non porro expedita facilis quod, et voluptate, ea minima, provident at deserunt ipsum voluptas nam blanditiis mollitia harum. Sequi quisquam voluptate, nostrum, repellat iure dolor accusamus, architecto possimus esse excepturi libero! Voluptas minima odit debitis officiis voluptates laborum, maiores sed repellendus, ratione dolore labore, sit dicta totam cumque quis et accusantium! Harum pariatur quidem ducimus aperiam itaque, quia blanditiis aspernatur tenetur temporibus! Repellat recusandae facilis possimus expedita laudantium.</p>
+        </footer>
+
+        <!-- récupération du js (version minifiée, performante pour chager les pages du site) téléchargé pour un projet en bootstrap -->
+        <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+
+        <!-- CDN Bundle Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
